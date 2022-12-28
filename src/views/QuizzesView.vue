@@ -2,6 +2,7 @@
 import q from "../data/data.json";
 import { ref, watch } from "vue";
 import Card from "../components/Card.vue";
+import gsap from "gsap";
 
 const quizzes = ref(q);
 const search = ref("");
@@ -11,6 +12,24 @@ watch(search, () => {
     quiz.name.toLocaleLowerCase().includes(search.value.toLocaleLowerCase())
   );
 });
+
+// Card animations
+// Before-enter hook equivalent of card-enter-from CSS rule
+const beforeEnter = (el) => {
+  console.log("before enter");
+  el.style.opacity = 0;
+  el.style.transform = "translateY(-60px)";
+};
+
+const enter = (el) => {
+  console.log("enter");
+  gsap.to(el, {
+    y: 0,
+    opacity: 1,
+    duration: 0.5,
+    delay: el.dataset.index * 0.3
+  })
+}
 </script>
 
 <template>
@@ -21,7 +40,18 @@ watch(search, () => {
     </header>
 
     <div class="options-container">
-      <Card v-for="quiz in quizzes" :key="quiz.id" :quiz="quiz" />
+      <TransitionGroup 
+        appear
+        @before-enter="beforeEnter"
+        @enter="enter"
+      >
+        <Card 
+          v-for="(quiz, index) in quizzes" 
+          :key="quiz.id" 
+          :quiz="quiz" 
+          :data-index="index"
+        />
+      </TransitionGroup>
     </div>
   </div>
 </template>
