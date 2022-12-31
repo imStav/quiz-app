@@ -1,35 +1,33 @@
-# quizz-app
+# Quiz app
 
-This template should help get you started developing with Vue 3 in Vite.
+> A quiz app to test your knowledge on diverse topics. Made with `Vite`, `Vue 3` and `CSS 3`.
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+## ⌨️ Project Setup
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+## 💻 Compile and Hot-Reload for Development
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+## 🛠️ Compile and Minify for Production
 
 ```sh
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+## ✨ Lint with [ESLint](https://eslint.org/)
 
 ```sh
 npm run lint
 ```
+## 🔬 Technologies
+
+- Vite
+- Vue 3
+- CSS 3
+- GSAP
