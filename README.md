@@ -31,3 +31,5 @@ npm run lint
 - Vue 3
 - CSS 3
 - GSAP
+
+*Find more information in the `package.json` file*
